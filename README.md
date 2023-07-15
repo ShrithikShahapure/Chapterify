@@ -31,6 +31,6 @@ Go to the project directory
 Execute the program
 
 ```bash
- streamlit run mainn.py
+ streamlit run main.py
 ```
 

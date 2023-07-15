@@ -1,12 +1,12 @@
 # Chapterify
-This is a program that generates chapters for youtube videos using Python and chatGPT.
-
+This is a Streamlit Applicaion that generates chapters and sumaries for youtube videos using Streamlit and ChatGPT.
+It runs on a docker container in and AWS EC2 instance that had Continuous Deployment by Github Actions.
 
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`openai.api_key`
+`MY_OPENAI_KEY`
 
 ## Run Locally
 
@@ -31,6 +31,6 @@ Go to the project directory
 Execute the program
 
 ```bash
- python Chapterify.py
+ streamlit run mainn.py
 ```
 

@@ -5,6 +5,10 @@ It runs on a docker container in and AWS EC2 instance that had Continuous Deploy
 ## Archiecture
 ![Architectture](architecture.png)
 
+## Demo
+![Architectture](final_output.gif)
+
+
 ## Environment Variables
 
 To run this project, you will need to add your GPT-4 API key to the following environment variables to your .env file

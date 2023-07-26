@@ -5,9 +5,6 @@ import streamlit as st
 from convert_time import convert_time
 from youtube_transcript_api import YouTubeTranscriptApi
 
-
-
-
 def extract_video_id(video_link):
 
 # this function extracts the video ID from a youtube link
@@ -54,7 +51,7 @@ def extract_transcript(video_link):
     	time.sleep(2)
 
     os.remove("op.txt")
-    st.success('Done! Added to clipboard.')
-    st.write(video_transcript)
+
+    # st.write(video_transcript)
     return video_transcript
 

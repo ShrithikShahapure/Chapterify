@@ -1,4 +1,7 @@
 youtube-transcript-api==0.6.1
-openai==0.27.8
-streamlit==1.24.0
-pyperclip==1.8.2
+streamlit==1.24.1
+google-ai-generativelanguage==0.2.0
+google-api-core==2.11.1
+google-auth==2.22.0
+google-generativeai==0.1.0
+googleapis-common-protos==1.59.1

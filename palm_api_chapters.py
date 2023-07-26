@@ -2,8 +2,7 @@ import google.generativeai as palm
 import time
 import streamlit as st
 
-# palm.configure(api_key=os.environ['API_KEY'])
-palm.configure(api_key="AIzaSyAMSOLcKdEwZUIhsAEF7m_uJSm73ZncCwg")
+palm.configure(api_key=os.environ['API_KEY']) #enter your API key
 model_id = 'models/text-bison-001'
 
 def palm_api_chapters(video_transcript):

@@ -1,6 +1,7 @@
 import google.generativeai as palm
 import time
 import streamlit as st
+import os
 
 palm.configure(api_key=os.environ['API_KEY']) #enter your API key
 model_id = 'models/text-bison-001'

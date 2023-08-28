@@ -1,0 +1,42 @@
+# # Work to be done:
+# create workflow to:   (These are to be seperate steps)
+#                 - stop the streamlit program
+#                 - pull the updated github repo
+#                 - rebuild the new docker file
+#                 - pull env from env with -e flag
+#                 - deploy the docker image 
+
+
+
+name: Deploy Chapterify
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-chapterify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Configure SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan your_ec2_instance_ip >> ~/.ssh/known_hosts
+
+      - name: Install Dependencies and Run Script
+        run: |
+          ssh ubuntu@your_ec2_instance_ip 'bash -s' <<'ENDSSH'
+          sudo apt update
+          sudo apt install -y python3-pip
+          git clone https://github.com/ShrithikShahapure/Chapterify.git
+          cd Chapterify
+          pip install -r requirements.txt
+          streamlit run main.py
+          ENDSSH
